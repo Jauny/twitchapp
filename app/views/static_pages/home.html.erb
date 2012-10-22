@@ -4,7 +4,9 @@
   <% break if index > 10 %>
   <ul>
     <li>
-  <%= image_tag(game["game"]["images"]["tiny"]) %>
+  <%= link_to image_tag(game["game"]["images"]["tiny"]), 
+              "http://www.twitch.tv/directory/game/#{game["game"]["name"]}",
+              :target => "_blank"  %>
   <%= "#{game["game"]["name"]} : #{game["viewers"]}" %>
     </li>
   </ul>
