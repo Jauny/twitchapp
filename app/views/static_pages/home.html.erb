@@ -1,3 +1,20 @@
-<h1>This is a test</h1>
+<h1>Top popular games on Twitch!</h1>
 
-<%= @every_top_games %>
+<% @top_games.each_with_index do |game, index| %>
+  <% break if index > 10 %>
+  <ul>
+    <li>
+  <%= image_tag(game["game"]["images"]["tiny"]) %>
+  <%= "#{game["game"]["name"]} : #{game["viewers"]}" %>
+    </li>
+  </ul>
+<% end %>
+
+<h1>Top popular streams on Twitch!</h1>
+
+<% @top_streams.each_with_index do |stream, index| %>
+  <% break if index > 10 %>
+  <ul>
+    <li><%= "#{stream["viewers"]} - #{stream["channel"]["display_name"]} - #{stream["game"]}" %></li>
+  </ul>
+<% end %>
