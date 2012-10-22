@@ -1,0 +1,7 @@
+<h1>This is a test</h1>
+
+
+<% @top_games.each_with_index do |game, index| %>
+  <% break if index > 10 %>
+  <%= puts "#{game["game"]["name"]} : #{game["viewers"]}" %>
+<% end %>
