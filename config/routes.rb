@@ -3,9 +3,12 @@ Twitchapp::Application.routes.draw do
 
   root :to => 'static_pages#home'
 
-  resources :games
-  resources :streams
-
+  resources :games do
+    get '*games' => 'games#show'
+  end
+  resources :streams do
+    get '*streams' => 'streams#show'
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

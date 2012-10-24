@@ -10,7 +10,7 @@
                     "http://www.twitch.tv/directory/game/#{game.name}",
                     :target => "_blank"  %>
         <%= link_to "#{game.name} : #{game.viewers}",
-                    "games/#{game.name}" %>
+                    game %>
       </li>
     <% end %>
   </ol>
@@ -25,7 +25,7 @@
       <% break if index > 10 %>
         <li>
       <%= link_to stream.name,
-                  "streams/#{stream.channel_name}",
+                  stream,
                   :target => "_blank"  %>
       <%= ": #{stream.viewers}" %>
         </li>
