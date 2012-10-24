@@ -1,22 +1,33 @@
 <h1>Top popular games on Twitch!</h1>
 
-<% @top_games.each_with_index do |game, index| %>
-  <% break if index > 10 %>
-  <ul>
-    <li>
-  <%= link_to image_tag(game["game"]["images"]["tiny"]), 
-              "http://www.twitch.tv/directory/game/#{game["game"]["name"]}",
-              :target => "_blank"  %>
-  <%= "#{game["game"]["name"]} : #{game["viewers"]}" %>
-    </li>
-  </ul>
-<% end %>
+  <% Game.all.each {|game| game.delete} %>
+  <% Game.populate %>
+
+  <ol>
+    <% Game.all.each_with_index do |game, index| %>
+      <li>
+        <%= link_to image_tag(game.logo), 
+                    "http://www.twitch.tv/directory/game/#{game.name}",
+                    :target => "_blank"  %>
+        <%= link_to "#{game.name} : #{game.viewers}",
+                    "games/#{game.name}" %>
+      </li>
+    <% end %>
+  </ol>
 
 <h1>Top popular streams on Twitch!</h1>
 
-<% @top_streams.each_with_index do |stream, index| %>
-  <% break if index > 10 %>
-  <ul>
-    <li><%= "#{stream["viewers"]} - #{stream["channel"]["display_name"]} - #{stream["game"]}" %></li>
-  </ul>
-<% end %>
+  <% Stream.all.each {|stream| stream.delete} %>
+  <% Stream.populate %>
+
+  <ol>
+    <% Stream.all.each_with_index do |stream, index| %>
+      <% break if index > 10 %>
+        <li>
+      <%= link_to stream.name,
+                  "streams/#{stream.channel_name}",
+                  :target => "_blank"  %>
+      <%= ": #{stream.viewers}" %>
+        </li>
+    <% end %>
+  </ol>

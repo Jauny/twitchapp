@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  viewers: 
+  game: MyString
+  logo: MyString
+
+two:
+  name: MyString
+  viewers: 
+  game: MyString
+  logo: MyString
