@@ -1,0 +1,16 @@
+<h1>Top popular streams on Twitch!</h1>
+
+  <% Stream.all.each {|stream| stream.delete} %>
+  <% Stream.populate %>
+
+  <ol>
+    <% Stream.all.each_with_index do |stream, index| %>
+      <% break if index > 10 %>
+        <li>
+      <%= link_to stream.name,
+                  stream,
+                  :target => "_blank"  %>
+      <%= ": #{stream.viewers}" %>
+        </li>
+    <% end %>
+  </ol>

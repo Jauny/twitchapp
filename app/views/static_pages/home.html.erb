@@ -1,33 +1,7 @@
-<h1>Top popular games on Twitch!</h1>
+<% adj = ["shit", "ultimate", "dream", "best of the best", "paramount", "peak", "best organism ever"].sample %>
 
-  <% Game.all.each {|game| game.delete} %>
-  <% Game.populate %>
-
-  <ol>
-    <% Game.all.each_with_index do |game, index| %>
-      <li>
-        <%= link_to image_tag(game.logo), 
-                    "http://www.twitch.tv/directory/game/#{game.name}",
-                    :target => "_blank"  %>
-        <%= link_to "#{game.name} : #{game.viewers}",
-                    game %>
-      </li>
-    <% end %>
-  </ol>
-
-<h1>Top popular streams on Twitch!</h1>
-
-  <% Stream.all.each {|stream| stream.delete} %>
-  <% Stream.populate %>
-
-  <ol>
-    <% Stream.all.each_with_index do |stream, index| %>
-      <% break if index > 10 %>
-        <li>
-      <%= link_to stream.name,
-                  stream,
-                  :target => "_blank"  %>
-      <%= ": #{stream.viewers}" %>
-        </li>
-    <% end %>
-  </ol>
+<div class="hero-unit">
+<h1>HI !</h1>
+<p class="lead"><big>Did you know that Twitch.tv is the <strong>
+  <%= adj %></strong> ?</big></p>
+<div>

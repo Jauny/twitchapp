@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="eng">
 <head>
   <title>Twitchapp</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Twitchr.dbc</a>
+        <ul class="nav">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Games", games_path %></li>
+          <li><%= link_to "Streams", streams_path %></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+    </div>
 
-<%= yield %>
+
+    <%= yield %>
+
+
+  </div>
 
 </body>
 </html>

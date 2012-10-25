@@ -3,6 +3,10 @@ Twitchapp::Application.routes.draw do
 
   root :to => 'static_pages#home'
 
+  match '/games'   => 'static_pages#games'
+  match '/streams' => 'static_pages#streams'
+  match '/about'   => 'static_pages#about'
+
   resources :games do
     get '*games' => 'games#show'
   end
