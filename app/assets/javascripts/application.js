@@ -13,3 +13,23 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+    var adjs = ["ultimate", "dream", "best of the best", "paramount", "highest peak", "longest orgasm", "shit"];
+
+    var rand_adj = function() {
+      adj = adjs.shift();
+
+      $('#home_adj').fadeOut(1000, function() {
+        var $this = $(this);
+        $this.text(adj + "?");
+        $this.fadeIn(1000);
+      });
+      adjs.push(adj);
+    };
+
+    rand_adj();
+    setInterval(function() {rand_adj()}, 1000);
+});
+
+
