@@ -1,1 +1,17 @@
-<h1> <%= @game.name %> </h1>
+<h1>Top streams for <%= @game.name %> </h1>
+
+<% @game_streams = [] %>
+<% Stream.where(:game => @game.name).each do |stream| %>
+  <% @game_streams << stream %>
+  <% break if @game_streams.length == 10 %>
+<% end %>
+
+  <ol>
+    <% @game_streams.each do |stream| %>
+      <li>
+        <%= link_to stream.name, stream %>
+        <%= " : #{stream.viewers}" %>
+        <%= stream.game %>
+      </li>
+    <% end %>
+  </ol>
