@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'pg'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
+  # gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.10.0'
   gem 'guard-rspec', '0.5.5'
 end
@@ -29,7 +30,7 @@ gem 'json'
 gem 'rest-client'
 
 group :production do
-  gem 'sqlite3', '1.3.5'
+  # gem 'sqlite3', '1.3.5'
 end
 
 # To use ActiveModel has_secure_password
