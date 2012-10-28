@@ -1,8 +1,5 @@
 <h1>Top popular games on Twitch!</h1>
 
-<% Game.all.each {|game| game.delete} %>
-<% Game.populate %>
-
 <ul class="thumbnails">
   <% Game.all.each_with_index do |game, index| %>
     <li class="span4">

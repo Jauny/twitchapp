@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
   def games
+    Game.destroy_all
+    Game.populate
   end
 
   def show
