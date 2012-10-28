@@ -1,7 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    Stream.populate
-    Game.populate
   end
 
   def streams
