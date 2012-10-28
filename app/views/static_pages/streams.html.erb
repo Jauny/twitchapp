@@ -3,12 +3,15 @@
   <% Stream.all.each {|stream| stream.delete} %>
   <% Stream.populate %>
 
-  <ol>
+  <ul class="thumbnails">
     <% Stream.all.each_with_index do |stream, index| %>
       <% break if index > 10 %>
-        <li>
-      <%= link_to stream.name, stream %>
-      <%= ": #{stream.viewers}" %>
+        <li class="span4">
+      <%= link_to image_tag(stream.logo), stream %>
+      <%= "#{index+1} - "%>
+      <%= link_to "#{stream.name}: #{stream.viewers}",
+                  "http://www.twitch.tv/#{stream.channel_name}",
+                  :target => "_blank" %>
         </li>
     <% end %>
-  </ol>
+  </ul>

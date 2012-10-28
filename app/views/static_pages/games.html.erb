@@ -1,16 +1,16 @@
 <h1>Top popular games on Twitch!</h1>
 
-  <% Game.all.each {|game| game.delete} %>
-  <% Game.populate %>
+<% Game.all.each {|game| game.delete} %>
+<% Game.populate %>
 
-  <ol>
-    <% Game.all.each_with_index do |game, index| %>
-      <li>
-        <%= link_to image_tag(game.logo), 
-                    "http://www.twitch.tv/directory/game/#{game.name}",
-                    :target => "_blank"  %>
-        <%= link_to "#{game.name} : #{game.viewers}",
-                    game %>
-      </li>
-    <% end %>
-  </ol>
+<ul class="thumbnails">
+  <% Game.all.each_with_index do |game, index| %>
+    <li class="span4">
+      <%= link_to image_tag(game.logo), 
+                  game %><br>
+      <%= link_to "#{index + 1} - #{game.name} : #{game.viewers}",
+                  "http://www.twitch.tv/directory/game/#{game.name}",
+                  :target => "_blank" %>
+    </li>
+  <% end %>
+</ul>

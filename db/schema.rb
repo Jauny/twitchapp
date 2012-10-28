@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20121023000530) do
   create_table "streams", :force => true do |t|
     t.string   "name"
     t.integer  "viewers"
+    t.string   "logo"
     t.string   "game"
     t.string   "channel_name"
     t.datetime "created_at",   :null => false

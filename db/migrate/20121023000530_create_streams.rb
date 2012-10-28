@@ -3,6 +3,7 @@ class CreateStreams < ActiveRecord::Migration
     create_table :streams do |t|
       t.string :name
       t.integer :viewers
+      t.string :logo
       t.string :game
       t.string :channel_name
 

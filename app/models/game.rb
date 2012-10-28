@@ -11,7 +11,7 @@ class Game < ActiveRecord::Base
 
       Game.create!({
         :name => game["game"]["name"],
-        :logo => game["game"]["images"]["tiny"],
+        :logo => game["game"]["images"]["screen"],
         :viewers => game["viewers"]
         })
     end

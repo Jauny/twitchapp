@@ -6,12 +6,13 @@
   <% break if @game_streams.length == 10 %>
 <% end %>
 
-  <ol>
+  <ul class="thumbnails">
     <% @game_streams.each do |stream| %>
-      <li>
-        <%= link_to stream.name, stream %>
+      <li class="span4">
+        <%= link_to image_tag(stream.logo), stream %>
+        <%= stream.name %>
         <%= " : #{stream.viewers}" %>
         <%= stream.game %>
       </li>
     <% end %>
-  </ol>
+  </ul>
