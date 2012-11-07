@@ -1,7 +1,7 @@
 <h1>Top popular games on Twitch!</h1>
 
 <ul class="thumbnails">
-  <% Game.all.each_with_index do |game, index| %>
+  <% @games.each_with_index do |game, index| %>
     <li class="span4">
       <%= link_to image_tag(game.logo), 
                   game %><br>

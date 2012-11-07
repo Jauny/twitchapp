@@ -1,7 +1,7 @@
 <h1>Top popular streams on Twitch!</h1>
 
   <ul class="thumbnails">
-    <% Stream.all.each_with_index do |stream, index| %>
+    <% @streams.each_with_index do |stream, index| %>
       <% break if index > 10 %>
         <li class="span4">
       <%= link_to image_tag(stream.logo), stream %>

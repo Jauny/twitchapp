@@ -1,7 +1,6 @@
 class StreamsController < ApplicationController
   def index
-    # Stream.destroy_all
-    # Stream.populate
+    @streams = Stream.all
   end
 
   def show

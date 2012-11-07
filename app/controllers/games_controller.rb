@@ -1,7 +1,6 @@
 class GamesController < ApplicationController
   def index
-    # Game.destroy_all
-    # Game.populate
+    @games = Game.all
   end
 
   def show
