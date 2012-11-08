@@ -16,4 +16,12 @@ class Game < ActiveRecord::Base
         })
     end
   end
+
+  def logo
+    super || default_logo
+  end
+
+  def default_logo
+    "http://i.imgur.com/I1B7x.gif"
+  end
 end
