@@ -1,12 +1,19 @@
 <div class="hero-unit">
-<h1>About (<%= link_to "me", "http://www.jypepin.com/", 
-                      :target => "_blank" %>)</h1>
+<h1>
+  About (<%= link_to "me", "http://www.jypepin.com/", 
+                      :target => "_blank" %>)
+  <%= image_tag "https://secure.gravatar.com/avatar/42e10e7df6c5f098e09e8d4a1d612cc3" %>
+</h1>
 <p>
   Hi!<br>
   I'm Jonathan Pepin, student @ <%= link_to "DevBootcamp",
-                                "http://www.devbootcamp.com/" %>;<br>
+                                "http://www.devbootcamp.com/" %>.<br>
   I am immensely passionnate about eSports, Starcraft, and anything else that requires some skills.<br>
-  I am currently working on that side-project to put into action what I learn here at DBC and to show Twitch how passionnate about them I am and how much I want to work for them.
-  <strong>HIRE ME!!!</strong><br>
+  I am currently working on this side-project to put into action what I learn here at DBC and to show Twitch how passionnate about them I am and how much I want to work for them.
+  <strong>
+    <%= mail_to "jypepin@gmail.com", 
+                "HIRE ME!!!", 
+                :subject => "TWITCH LOVES YOU !!!!!!!" %>
+  </strong><br>
 </p>
 </div>
