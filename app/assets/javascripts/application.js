@@ -32,4 +32,3 @@ $(document).ready(function() {
     setInterval(function() {rand_adj()}, 3000);
 });
 
-

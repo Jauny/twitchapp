@@ -25,6 +25,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 gem 'json'
 gem 'rest-client'

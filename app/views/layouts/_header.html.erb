@@ -7,5 +7,14 @@
       <li><%= link_to "Streams", streams_path %></li>
       <li><%= link_to "About", about_path %></li>
     </ul>
+    <ul class="nav pull-right">
+      <% if current_user %>
+        <p class="navbar-text" style="margin-right:150px;">Welcome, <%= current_user.name %>!
+          <%= link_to "Sign out", signout_path %>
+        </p>
+      <% else %>
+        <li style="margin-right:150px;"><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
