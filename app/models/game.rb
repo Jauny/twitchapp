@@ -8,12 +8,15 @@ class Game < ActiveRecord::Base
     games = json["top"]
 
     games.each do |game|
-
-      Game.create!({
-        :name => game["game"]["name"],
-        :logo => game["game"]["images"]["screen"],
-        :viewers => game["viewers"]
+      if found_game = Game.find_by_name(game["game"]["name"])
+        found_game.update_attribute(:viewers, game["viewers"])
+      else
+        Game.create!({
+          :name => game["game"]["name"],
+          :logo => game["game"]["images"]["screen"],
+          :viewers => game["viewers"]
         })
+      end
     end
   end
 

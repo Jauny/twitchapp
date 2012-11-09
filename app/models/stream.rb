@@ -8,14 +8,17 @@ class Stream < ActiveRecord::Base
     streams = json["streams"]
 
     streams.each do |stream|
-
-      Stream.create!({
-        :name => stream["channel"]["display_name"],
-        :game => stream["game"],
-        :logo => stream["channel"]["logo"],
-        :viewers => stream["viewers"],
-        :channel_name => stream["channel"]["name"]
+      if found_stream = Stream.find_by_channel_name(stream["channel"]["name"])
+        found_stream.update_attribute(:viewers, stream["viewers"])
+      else
+        Stream.create!({
+          :name => stream["channel"]["display_name"],
+          :game => stream["game"],
+          :logo => stream["channel"]["logo"],
+          :viewers => stream["viewers"],
+          :channel_name => stream["channel"]["name"]
         })
+      end
     end
   end
 
