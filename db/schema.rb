@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(:version => 20121109202651) do
 
   create_table "streams", :force => true do |t|
     t.string   "name"
-    t.string   "game"
     t.integer  "viewers"
     t.string   "logo"
+    t.string   "game"
     t.string   "channel_name"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20121109202651) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "token"
+    t.string   "secret"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
