@@ -1,11 +1,9 @@
 class GamesController < ApplicationController
   def index
-    @games = Game.all
+    @games = Game.all.sort { |a,b| b.viewers <=> a.viewers }
   end
 
   def show
     @game = Game.find(params[:id])
-    # Game.destroy_all
-    # Game.populate
   end
 end 
