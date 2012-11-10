@@ -1,11 +1,5 @@
 <h1>Top streams for <%= @game.name %> </h1>
 
-<% @game_streams = [] %>
-<% Stream.where(:game => @game.name).each do |stream| %>
-  <% @game_streams << stream %>
-  <% break if @game_streams.length == 10 %>
-<% end %>
-
   <ul class="thumbnails">
     <% @game_streams.each do |stream| %>
       <li class="span4">
