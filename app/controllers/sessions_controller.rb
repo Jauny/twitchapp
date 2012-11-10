@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       :oauth_token => @user.token,
       :oauth_token_secret => @user.secret
     )
-    Thread.new { client_user.update("Checkout twitchr.herokuapp.com made by @Jauny 5 weeks in @devbootcamp ! (cc @TwitchTV )") }
+    Thread.new { client_user.update("Checkout twitchr.herokuapp.com made by @Jauny 5 weeks in #devbootcamp ! (cc #TwitchTV )") }
   end
 
   def destroy
