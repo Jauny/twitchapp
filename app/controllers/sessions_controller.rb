@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       @user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
     else
       @user = User.create_with_omniauth(auth)
-      send_signup_tweet
+      # send_signup_tweet
     end
     
     session[:user_id] = @user.id
