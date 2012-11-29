@@ -27,4 +27,10 @@ class Game < ActiveRecord::Base
   def default_logo
     "http://i.imgur.com/I1B7x.gif"
   end
+
+  def ordered_streams
+    Stream.where(:game => self.name).sort do |a,b|
+      b.viewers <=> a.viewers
+    end.slice(0...9)
+  end
 end

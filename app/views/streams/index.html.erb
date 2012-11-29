@@ -2,13 +2,10 @@
 
   <ul class="thumbnails">
     <% @streams.each_with_index do |stream, index| %>
-      <% break if index > 10 %>
         <li class="span4">
       <%= link_to image_tag(stream.logo), stream %>
       <%= "#{index+1} - "%>
-      <%= link_to "#{stream.name}: #{stream.viewers}",
-                  "http://www.twitch.tv/#{stream.channel_name}",
-                  :target => "_blank" %>
+      <%= stream_link(stream) %>
         </li>
     <% end %>
   </ul>
